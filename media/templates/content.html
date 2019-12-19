@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block header %}{{ header | safe }}{% endblock %}
+
+{% block content %}
+<section class="section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title wow fadeInDown animated" data-wow-delay="0.3s" style="visibility: visible;-webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; animation-delay: 0.3s;">
+            {% if dataset.user_friendly_name %}{{dataset.user_friendly_name}}{% else %}Document library{% endif %}</h2>
+          <div class="shape wow fadeInDown animated" data-wow-delay="0.3s" style="visibility: visible;-webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; animation-delay: 0.3s;"></div>
+        </div>
+        <div class="section-header wow fadeInRight animated" data-wow-delay="0.3s" style="visibility: visible;-webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; animation-delay: 0.3s;"> 
+           {% if dataset.description %}{{dataset.description | safe }}{% endif %}
+           <p class="text-right" ><b>Last Refreshed:</b> {{ dataset.last_refreshed }}</p>
+        </div>    
+        <div class="row">
+            {{ content | safe }}
+        </div>
+      </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,30 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+*.pyc
+*.swap
+*.db
+*.swp
+*.csv
+__pycache__/
+downloads/
+core/migrations/
+core/models/
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# celery beat schedule file
+celerybeat-schedule
+celery
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+
